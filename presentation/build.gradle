@@ -55,6 +55,8 @@ android {
 	]
 
 	buildTypes {
+		def docProviderAuthority = "org.cryptomator.presentation.docprovider.documents"
+
 		release {
 			crunchPngs false
 			minifyEnabled false
@@ -63,9 +65,9 @@ android {
 
 			buildConfigField "String", "DROPBOX_API_KEY", "\"" + getApiKey('DROPBOX_API_KEY') + "\""
 			buildConfigField "String", "PCLOUD_CLIENT_ID", "\"" + getApiKey('PCLOUD_CLIENT_ID') + "\""
-			buildConfigField "String", "BOX_CLIENT_ID", "\"" + getApiKey('BOX_CLIENT_ID') + "\""
+			buildConfigField "String", "DOCUMENTS_PROVIDER_AUTHORITY", "\"" + docProviderAuthority + "\""
 
-			manifestPlaceholders = [DROPBOX_API_KEY: getApiKey('DROPBOX_API_KEY'), ONEDRIVE_API_KEY_DECODED: getOnedriveApiKey(), BOX_CLIENT_ID: getApiKey('BOX_CLIENT_ID')]
+			manifestPlaceholders = [DROPBOX_API_KEY: getApiKey('DROPBOX_API_KEY'), ONEDRIVE_API_KEY_DECODED: getOnedriveApiKey(), DOCUMENTS_PROVIDER_AUTHORITY: docProviderAuthority]
 		}
 
 		debug {
@@ -75,11 +77,19 @@ android {
 			minifyEnabled false
 			shrinkResources false
 
+<<<<<<< HEAD
 			buildConfigField "String", "DROPBOX_API_KEY", "\"" + getApiKey('DROPBOX_API_KEY') + "\""
 			buildConfigField "String", "PCLOUD_CLIENT_ID", "\"" + getApiKey('PCLOUD_CLIENT_ID') + "\""
 			buildConfigField "String", "BOX_CLIENT_ID", "\"" + getApiKey('BOX_CLIENT_ID') + "\""
 
 			manifestPlaceholders = [DROPBOX_API_KEY: getApiKey('DROPBOX_API_KEY'), ONEDRIVE_API_KEY_DECODED: getOnedriveApiKey(), BOX_CLIENT_ID: getApiKey('BOX_CLIENT_ID')]
+=======
+			buildConfigField "String", "DROPBOX_API_KEY", "\"" + getApiKey('DROPBOX_API_KEY_DEBUG') + "\""
+			buildConfigField "String", "PCLOUD_CLIENT_ID", "\"" + getApiKey('PCLOUD_CLIENT_ID_DEBUG') + "\""
+			buildConfigField "String", "DOCUMENTS_PROVIDER_AUTHORITY", "\"" + docProviderAuthority + "\""
+
+			manifestPlaceholders = [DROPBOX_API_KEY: getApiKey('DROPBOX_API_KEY_DEBUG'), ONEDRIVE_API_KEY_DECODED: getOnedriveApiKey(), DOCUMENTS_PROVIDER_AUTHORITY: docProviderAuthority]
+>>>>>>> 2bb262a7 (Added first basic implementation for DocumentsProvider)
 
 			versionNameSuffix '-DEBUG'
 			enableUnitTestCoverage false
