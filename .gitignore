@@ -59,3 +59,4 @@ local.properties
 ###Etc###
 cmdline-tools/
 .kotlin/
+.env
