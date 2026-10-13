@@ -14,6 +14,9 @@ object FlavorConfig {
 	/** The lite (F-Droid main repo) edition. Excludes all API-key-based cloud providers. */
 	val isLiteFlavor: Boolean = BuildConfig.FLAVOR == "lite"
 
+	/** The Accrescent store edition. */
+	val isAccrescentFlavor: Boolean = BuildConfig.FLAVOR == "accrescent"
+
 	/** Flavors that exclude Google Drive (no Google Play Services available). */
 	val excludesGoogleDrive: Boolean = BuildConfig.FLAVOR == "fdroid" || BuildConfig.FLAVOR == "accrescent"
 
