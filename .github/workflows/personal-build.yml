@@ -24,10 +24,10 @@ jobs:
           DROPBOX_API_KEY: ${{ secrets.DROPBOX_API_KEY }}
           PCLOUD_CLIENT_ID: ${{ secrets.PCLOUD_CLIENT_ID }}
         run: |
-          ./gradlew assembleApkstoreRelease -Pandroid.injected.signing.store.file=$(find /workspaces -name debug.keystore) -Pandroid.injected.signing.store.password=android -Pandroid.injected.signing.key.alias=androiddebugkey -Pandroid.injected.signing.key.password=android
+          ./gradlew assembleApkstoreRelease -Pandroid.injected.signing.store.file=$(find $(pwd) -name debug.keystore) -Pandroid.injected.signing.store.password=android -Pandroid.injected.signing.key.alias=androiddebugkey -Pandroid.injected.signing.key.password=android
 
       - uses: actions/upload-artifact@v4
         with:
           name: cryptomator-apkstore-release-debugkey
-          path: $(find /workspaces/**/presentation -name '*.apk')
+          path: "presentation/**/*.apk"
           # expected path: presentation/build/outputs/apk/apkstore/release/*.apk
