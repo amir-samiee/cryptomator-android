@@ -26,4 +26,5 @@ jobs:
       - uses: actions/upload-artifact@v4
         with:
           name: cryptomator-apkstore-release-debugkey
-          path: presentation/build/outputs/apk/apkstore/release/*.apk
+          path: "presentation/**/*.apk"
+          # expected path: presentation/build/outputs/apk/apkstore/release/*.apk
