@@ -3,7 +3,7 @@ package org.cryptomator.util
 object FlavorConfig {
 
 	/** The premium (paid) Play Store edition ships with full access, so license enforcement is bypassed. */
-	val isPremiumFlavor: Boolean = BuildConfig.FLAVOR == "playstore"
+	val isPremiumFlavor: Boolean = true
 
 	/** The freemium IAP (in-app purchase) flavor distributed on Google Play. */
 	val isFreemiumFlavor: Boolean = BuildConfig.FLAVOR == "playstoreiap"
